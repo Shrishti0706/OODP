@@ -7,20 +7,22 @@ public:
     
     Warehouse() : items(0) {}
     
-    void addItem(int count) {
+    int addItem(int count) {
         if (count > 0) {
             items += count;
             totalItemsStored += count;
         }
+        return items;
     }
     
-    void removeItem(int count) {
+    int removeItem(int count) {
         if (count > 0 && count <= items) {
             items -= count;
             totalItemsStored -= count;
         } else {
             std::cout << "Invalid operation: Not enough items to remove." << std::endl;
         }
+        return items;
     }
     
     static int getTotalItemsStored() {
@@ -47,3 +49,4 @@ int main() {
     
     return 0;
 }
+
